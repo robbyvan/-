@@ -17,7 +17,7 @@ class RandomizedSet:
     return True
 
   def remove(self, val):
-    if val not in self.pos:
+    if not self.pos[val]:
       return False
     index, last = self.pos[val], self.nums[-1]
     self.nums[index] = last
