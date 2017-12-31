@@ -2,6 +2,7 @@
 # 利用2进制保存两个状态00 01 10 11
 # 下个状态生就+2(+10)
 # 检查相邻注意边界, 使用max min
+
 class Solution:
   def gameOfLife(self, board):
     if not board or not board[0]:
