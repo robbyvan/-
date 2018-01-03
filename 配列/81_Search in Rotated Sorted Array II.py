@@ -8,8 +8,10 @@
 # 最终while完毕之后, 返回low, 检查low是不是target.
 class Solution:
   def search(self, nums, target):
+    if not nums:
+      return False
     low, high = 0, len(nums) - 1
-    while low <= high:
+    while low < high:
       mid = (low + high) / 2
       if nums[mid] == target:
         return True
