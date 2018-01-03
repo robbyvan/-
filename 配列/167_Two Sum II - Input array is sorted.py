@@ -7,5 +7,5 @@ class Solution:
     d = {}
     for i, num in enumerate(numbers):
       if target - num in d:
-        return [d[target - num], i]
-      d[num] = i
+        return [d[target - num], i + 1]
+      d[num] = i + 1
