@@ -1,5 +1,5 @@
 # 84. Largest Rectangle in Histogram
-# 考虑递增, 开始递减时, 计算递减前每个bar到递减处的面积: height[stack[-1]] * width
+# 考虑递增, 开始递减时, 计算递减前每个高于当前i的bar到i之前的面积: height[stack[-1]] * width
 # 其中width = i - stack[-1] - 1 或者全部i - 0
 # 一开始height补0, 为了最后计算一次全部
 
