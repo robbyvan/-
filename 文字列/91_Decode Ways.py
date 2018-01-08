@@ -5,8 +5,6 @@
 # 如果i处遇到0, 这时候对于[i-1:i+1] 一定是x0单独出来, 是新i的opt[i + 2].
 # 但是处理的时候把0处的opt = 0, 就也能写成opt[i+1](=0) + opt[i+2]
 
-
-
 class Solution(object):
   def numDecodings(self, s):
     if not s:
