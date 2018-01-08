@@ -12,7 +12,7 @@ class Solution:
     if m < n:
       return 0
     dp = [[0 for _ in range(n + 1)] for _ in range(m + 1)]
-    for i in range(m):
+    for i in range(m + 1):
       dp[i][0] = 1
     for j in range(n):
       for i in range(j, m):
