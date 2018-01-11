@@ -4,21 +4,22 @@
 import collections
 class Solution:
   def findSubstring(self, s, words):
-    wordBag = collections.Counter(words)
-    wordLen, numWords = len(words[0]), len(words)
-    totalLen, res = wordLen * numWords, []
+    res = []
+    if not words:
+      return []
+    wordLen, wordNum = len(words[0]), len(words)
+    totalLen = wordLen * wordNum
+    targets = collections.Counter(words)
     for i in range(len(s) - totalLen + 1):
       seen = collections.defaultdict(int)
       for j in range(i, i + totalLen, wordLen):
-        currWord = s[j:j + wordLen]
-        if currWord in wordBag:
-          seen[currWord] += 1
-          if seen[currWord] > wordBag[currWord]:
+        curr = s[j:j + wordLen]
+        if curr in targets:
+          seen[curr] += 1
+          if seen[curr] > targets[curr]:
             break
         else:
           break
-      if seen == wordBag:
+      if seen == targets:
         res.append(i)
     return res
-
-
